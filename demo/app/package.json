@@ -1,0 +1,14 @@
+{
+  "name": "nativescript-localstorage-demo",
+  "android": {
+    "v8Flags": "--expose_gc"
+  },
+  "description": "Nativescript hello-world project template",
+  "license": "MIT",
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/NathanaelA/nativescrit-localstorage"
+  },
+  "version": "1.0.0"
+}

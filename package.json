@@ -1,0 +1,46 @@
+{
+    "name": "nativescript-localstorage",
+    "version": "1.0.0",
+    "description": "LocalStorage API",
+    "main": "localstorage.js",
+    "nativescript": {
+        "platforms": {
+            "android": "1.0.0",
+            "ios": "1.0.0"
+        }
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/NathanaelA/nativescript-localstorage.git"
+    },
+    "keywords": [
+        "NativeScript",
+        "local storage",
+        "localstorage",
+        "nativescript",
+        "data",
+        "storage"
+    ],
+    "author": {
+        "name": "Nathanael Anderson",
+        "email": "nathan@master-technology.com"
+    },
+    "license": {
+        "type": "MIT",
+        "url": "https://github.com/NathanaelA/nativescript-localstorage/blob/master/LICENSE"
+    },
+    "bugs": {
+        "url": "https://github.com/NathanaelA/nativescript-localstorage/issues"
+    },
+    "homepage": "https://github.com/NathanaelA/nativescript-localstorage",
+    "readmeFilename": "README.md",
+    "scripts": {
+        "demo.ios": "npm run preparedemo && cd demo && tns emulate ios",
+        "demo.android": "npm run preparedemo && cd demo && tns run android",
+        "debug.ios": "npm run preparedemo && cd demo && tns debug ios --emulator",
+        "debug.android": "npm run preparedemo && cd demo && tns debug android --emulator",
+        "preparedemo": "cd demo && tns plugin remove nativescript-localstorage && tns plugin add .. && tns install",
+        "setup": "cd demo && npm install && tns plugin add .. && cd ..",
+        "start": "npm run demo.android"
+    }
+}

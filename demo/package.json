@@ -1,0 +1,20 @@
+{
+  "description": "NativeScript LocalStorage Demo Application",
+  "license": "MIT",
+  "readme": "None",
+  "nativescript": {
+    "id": "com.mastertechapps.localstoragedemo"
+  },
+  "dependencies": {
+    "nativescript-localstorage": "file:///..",
+    "nativescript-theme-core": "latest",
+    "tns-core-modules": "latest"
+  },
+  "devDependencies": {
+    "babel-traverse": "6.4.5",
+    "babel-types": "6.4.5",
+    "babylon": "6.4.5",
+    "lazy": "1.0.11",
+    "nativescript-dev-android-snapshot": "^0.*.*"
+  }
+}
