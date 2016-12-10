@@ -2,21 +2,21 @@
 * (c) 2016, Nathanael Anderson.
 * Licensed under the MIT license.
 *
-* Version 1.0.0                                        nathan@master-technology.com
+* Version 1.1.0                                        nathan@master-technology.com
 **********************************************************************************/
 'use strict';
 
 const FileSystemAccess = require('file-system/file-system-access.js').FileSystemAccess;
 
 if (!global.localStorage) {
-    let internalData = {};
-    let timeout = null;
+    let localStorageData = {};
+    let localStorageTimeout = null;
 
     const internalSaveData = function() {
         let fsa = new FileSystemAccess();
         let fileName = fsa.getDocumentsFolderPath() + "/localStorage.db";
         try {
-            fsa.writeText(fileName, JSON.stringify(internalData));
+            fsa.writeText(fileName, JSON.stringify(localStorageData));
         } catch (err) {
             // This should never happen on normal data, but if they tried to put non JS stuff it won't serialize
             console.log("localStorage: unable to write storage, error: ", err);
@@ -25,10 +25,10 @@ if (!global.localStorage) {
     };
 
     const saveData = function()  {
-        if (timeout !== null) {
-            clearTimeout(timeout);
+        if (localStorageTimeout !== null) {
+            clearTimeout(localStorageTimeout);
         }
-        timeout = setTimeout(internalSaveData, 250);
+        localStorageTimeout = setTimeout(internalSaveData, 250);
     };
 
     const loadData = function() {
@@ -42,7 +42,7 @@ if (!global.localStorage) {
         try {
             let textData = fsa.readText(fileName);
             data = JSON.parse(textData);
-            internalData = data;
+            localStorageData = data;
         }
         catch (err) {
             console.log("localStorage: error reading storage, Error: ", err);
@@ -54,37 +54,78 @@ if (!global.localStorage) {
 
     global.localStorage = {
         getItem: function (name) {
-            if (internalData[name]) {
-                return internalData[name];
+            if (localStorageData[name]) {
+                return localStorageData[name];
             }
             return null;
         },
         key: function(id) {
-            const keys = Object.keys(internalData);
+            const keys = Object.keys(localStorageData);
             if (id >= keys.length) { return null; }
             return keys[id];
         },
         setItem: function (name, value) {
-            internalData[name] = value;
+            localStorageData[name] = value;
             saveData();
         },
         removeItem: function (name) {
-            if (internalData[name]) {
-                delete internalData[name];
+            if (localStorageData[name]) {
+                delete localStorageData[name];
                 saveData();
             }
         },
         clear: function () {
-            internalData = {};
+            localStorageData = {};
             saveData();
         }
     };
     Object.defineProperty(global.localStorage, "length", {
         get: function() {
-            return (Object.keys(internalData).length);
+            return (Object.keys(localStorageData).length);
         },
         enumerable: true,
         configurable: true
     });
 }
+
+
+if (!global.sessionStorage) {
+    let sessionStorageData = {};
+
+    global.sessionStorage = {
+        getItem: function (name) {
+            if (sessionStorageData[name]) {
+                return sessionStorageData[name];
+            }
+            return null;
+        },
+        key: function(id) {
+            const keys = Object.keys(sessionStorageData);
+            if (id >= keys.length) { return null; }
+            return keys[id];
+        },
+        setItem: function (name, value) {
+            sessionStorageData[name] = value;
+        },
+        removeItem: function (name) {
+            if (sessionStorageData[name]) {
+                delete sessionStorageData[name];
+            }
+        },
+        clear: function () {
+            sessionStorageData = {};
+        }
+    };
+    Object.defineProperty(global.sessionStorage, "length", {
+        get: function() {
+            return (Object.keys(sessionStorageData).length);
+        },
+        enumerable: true,
+        configurable: true
+    });
+}
+
+
+
+
 module.exports = global.localStorage;

@@ -3,8 +3,8 @@
 [![npm](https://img.shields.io/npm/dt/nativescript-localstorage.svg?label=npm%20d%2fls)](https://www.npmjs.com/package/nativescript-localstorage)
 
 # nativescript-localstorage
-A NativeScript plugin to add LocalStorage
-If you are trying to use any libraries that use the localStorage API; or you want a fairly simple storage engine; here it is.
+A NativeScript plugin to add LocalStorage and SessionStorage
+If you are trying to use any libraries that use the localStorage/sessionStorage API; or you want a fairly simple storage engine; here it is.
 
 ## License
 
@@ -43,8 +43,7 @@ LS.getItem('Another Plugin');  // Returns: "By Master Technology"
 ```
 
 ## You ask, how exactly does this help?
-This allows you to use LocalStorage as if it is built into NativeScript.
-
+This allows you to use localStorage or sessionStorage as if it is built into NativeScript.
 
 
 ### API
@@ -86,7 +85,7 @@ Returns the number of keys stored
 console.log("Keys stored", localStorage.length);
 ```
 
-#### localstorage.key(id) - Return the key name at this position 
+#### localStorage.key(id) - Return the key name at this position 
 ##### id - 0 based id of the key
 ##### returns: string name of the key (or null if id is past size of saved storage )
 
@@ -95,3 +94,6 @@ console.log("Keys stored", localStorage.length);
 console.log("Key at 0 is", localStorage.key(0));
 ```
 
+
+### sessionStorage 
+You can use sessionStorage instead of localStorage for any of the routines above; the difference between the two API's is localStorage saves and will always be present, where sessionStorage is temporary, when you close the program it is gone. 
