@@ -2,11 +2,11 @@
 * (c) 2017, Nathanael Anderson.
 * Licensed under the MIT license.
 *
-* Version 1.1.1                                        nathan@master-technology.com
+* Version 1.1.2                                        nathan@master-technology.com
 **********************************************************************************/
 'use strict';
 
-const FileSystemAccess = require('file-system/file-system-access.js').FileSystemAccess;
+const FileSystemAccess = require('file-system/file-system-access').FileSystemAccess;
 
 if (!global.localStorage) {
     let localStorageData = {};
