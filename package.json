@@ -1,13 +1,19 @@
 {
     "name": "nativescript-localstorage",
-    "version": "1.1.0",
+    "version": "1.1.1",
     "description": "LocalStorage/SessionStorage API",
-    "main": "localstorage.js",
+    "main": "localstorage",
     "nativescript": {
         "platforms": {
             "android": "1.0.0",
             "ios": "1.0.0"
-        }
+        },
+	  "plugin": {
+		"nan": "true",
+		"pan": "true",
+		"core3": "true",
+		"category": "Processing"
+	  }
     },
     "repository": {
         "type": "git",

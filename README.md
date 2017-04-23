@@ -18,10 +18,12 @@ I also do contract work; so if you have a module you want built for NativeScript
 ## Sample Snapshot
 ![Sample1](docs/localstorage.gif)
  
+## Compatibility
+Supports NativeScript 2.x and 3.x
 
 ## Installation 
 
-tns plugin add nativescript-localstorage  
+`tns plugin add nativescript-localstorage`  
 
 
 ## Usage
