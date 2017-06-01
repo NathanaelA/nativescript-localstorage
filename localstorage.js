@@ -8,6 +8,10 @@
 
 const FileSystemAccess = require('file-system/file-system-access').FileSystemAccess;
 
+if (!global.Storage) {
+    global.Storage = function Storage() { }
+}
+
 if (!global.localStorage) {
     let localStorageData = {};
     let localStorageTimeout = null;
