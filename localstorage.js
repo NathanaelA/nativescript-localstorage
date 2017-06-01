@@ -2,7 +2,7 @@
 * (c) 2017, Nathanael Anderson.
 * Licensed under the MIT license.
 *
-* Version 1.1.2                                        nathan@master-technology.com
+* Version 1.1.4                                        nathan@master-technology.com
 **********************************************************************************/
 'use strict';
 
@@ -54,7 +54,7 @@ if (!global.localStorage) {
 
     global.localStorage = {
         getItem: function (name) {
-            if (localStorageData[name]) {
+            if (localStorageData.hasOwnProperty(name)) {
                 return localStorageData[name];
             }
             return null;
@@ -94,7 +94,7 @@ if (!global.sessionStorage) {
 
     global.sessionStorage = {
         getItem: function (name) {
-            if (sessionStorageData[name]) {
+            if (sessionStorageData.hasOwnProperty(name)) {
                 return sessionStorageData[name];
             }
             return null;
