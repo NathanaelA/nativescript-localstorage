@@ -1,6 +1,6 @@
 {
     "name": "nativescript-localstorage",
-    "version": "1.1.4",
+    "version": "1.1.5",
     "description": "LocalStorage/SessionStorage API",
     "main": "localstorage",
     "nativescript": {
@@ -33,6 +33,18 @@
         "name": "Nathanael Anderson",
         "email": "nathan@master-technology.com"
     },
+	"contributors": [
+    {
+      "name": "Stanimira Vlaeva",
+      "email": "stanimira.vlaeva@gmail.com",
+      "url": "https://github.com/sis0k0"
+    },
+	{
+      "name": "Daniel Kucal",
+      "email": "dkucal@gmail.com",
+      "url": "https://github.com/danielkucal"
+    }	
+	],
     "license": {
         "type": "MIT",
         "url": "https://github.com/NathanaelA/nativescript-localstorage/blob/master/LICENSE"

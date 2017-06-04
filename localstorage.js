@@ -2,12 +2,13 @@
 * (c) 2017, Nathanael Anderson.
 * Licensed under the MIT license.
 *
-* Version 1.1.4                                        nathan@master-technology.com
+* Version 1.1.5                                        nathan@master-technology.com
 **********************************************************************************/
 'use strict';
 
 const FileSystemAccess = require('file-system/file-system-access').FileSystemAccess;
 
+// So that code that is looking for the "Storage" object will pass its check
 if (!global.Storage) {
     global.Storage = function Storage() { }
 }

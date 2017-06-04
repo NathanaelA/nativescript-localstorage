@@ -99,3 +99,7 @@ console.log("Key at 0 is", localStorage.key(0));
 
 ### sessionStorage 
 You can use sessionStorage instead of localStorage for any of the routines above; the difference between the two API's is localStorage saves and will always be present, where sessionStorage is temporary, when you close the program it is gone. 
+
+### Contributors
+- https://github.com/sis0k0
+- https://github.com/danielkucal
