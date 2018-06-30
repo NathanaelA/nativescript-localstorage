@@ -8,7 +8,7 @@ require("./bundle-config");
 var application = require("application");
 require('nativescript-localstorage');
 
-application.start({ moduleName: "main-page" });
+application.run({ moduleName: "app-root" });
 
 /*
 Do not place any code after the application has been started as it will not

@@ -1,6 +1,6 @@
 {
     "name": "nativescript-localstorage",
-    "version": "1.1.5",
+    "version": "1.1.6",
     "description": "LocalStorage/SessionStorage API",
     "main": "localstorage",
     "nativescript": {
@@ -43,7 +43,7 @@
       "name": "Daniel Kucal",
       "email": "dkucal@gmail.com",
       "url": "https://github.com/danielkucal"
-    }	
+    }
 	],
     "license": {
         "type": "MIT",

@@ -1,8 +1,8 @@
 /**********************************************************************************
-* (c) 2017, Nathanael Anderson.
+* (c) 2017-2018, Nathanael Anderson.
 * Licensed under the MIT license.
 *
-* Version 1.1.5                                        nathan@master-technology.com
+* Version 1.1.6                                        nathan@master-technology.com
 **********************************************************************************/
 'use strict';
 
@@ -10,7 +10,7 @@ const FileSystemAccess = require('file-system/file-system-access').FileSystemAcc
 
 // So that code that is looking for the "Storage" object will pass its check
 if (!global.Storage) {
-    global.Storage = function Storage() { }
+    global.Storage = function Storage() { };
 }
 
 if (!global.localStorage) {
