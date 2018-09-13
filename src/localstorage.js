@@ -13,7 +13,7 @@ if (!global.Storage) {
     global.Storage = function Storage() { };
 }
 
-if (!global.localStorage) {
+if (!global.localStorage || module.hot) {
     let localStorageData = {};
     let localStorageTimeout = null;
 
@@ -159,3 +159,5 @@ if (!global.sessionStorage) {
 
 
 module.exports = global.localStorage;
+
+module.hot && module.hot.accept();
