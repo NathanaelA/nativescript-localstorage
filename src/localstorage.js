@@ -2,11 +2,11 @@
 * (c) 2017-2018, Nathanael Anderson.
 * Licensed under the MIT license.
 *
-* Version 1.1.6                                        nathan@master-technology.com
+* Version 1.1.8                                        nathan@master-technology.com
 **********************************************************************************/
 'use strict';
 
-const FileSystemAccess = require('file-system/file-system-access').FileSystemAccess;
+const FileSystemAccess = require('tns-core-modules/file-system/file-system-access').FileSystemAccess;
 
 // So that code that is looking for the "Storage" object will pass its check
 if (!global.Storage) {
@@ -56,7 +56,6 @@ if (!global.localStorage) {
 
     loadData();
 
-
     global.localStorage = {
         getItem: function (name) {
             if (localStorageData.hasOwnProperty(name)) {
@@ -69,8 +68,22 @@ if (!global.localStorage) {
             if (id >= keys.length) { return null; }
             return keys[id];
         },
-        setItem: function (name, value) {
+        setItemObject: function(name, value) {
             localStorageData[name] = value;
+            saveData();
+        },
+        // Revamp this to be "String" only
+        // https://github.com/NathanaelA/nativescript-localstorage/issues/17
+        setItem: function (name, value) {
+            if (value == null) {
+                if (value === null) {
+                    localStorageData[name] = "null";
+                } else {
+                    localStorageData[name] = "undefined";
+                }
+            } else {
+                localStorageData[name] = value.toString();
+            }
             saveData();
         },
         removeItem: function (name) {
@@ -109,9 +122,21 @@ if (!global.sessionStorage) {
             if (id >= keys.length) { return null; }
             return keys[id];
         },
-        setItem: function (name, value) {
+        setItemObject: function(name, value) {
             sessionStorageData[name] = value;
         },
+        setItem: function (name, value) {
+            if (value == null) {
+                if (value === null) {
+                    sessionStorageData[name] = "null";
+                } else {
+                    sessionStorageData[name] = "undefined";
+                }
+            } else {
+                sessionStorageData[name] = value.toString();
+            }
+        },
+
         removeItem: function (name) {
             if (sessionStorageData[name]) {
                 delete sessionStorageData[name];

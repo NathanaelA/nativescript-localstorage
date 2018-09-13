@@ -19,7 +19,11 @@ I also do contract work; so if you have a module you want built for NativeScript
 ![Sample1](docs/localstorage.gif)
  
 ## Compatibility
-Supports NativeScript 2.x and 3.x
+Supports NativeScript 2.x and greater
+
+## Breaking Change from v1 to v2
+- V2.00 now forces setItem to be the same as a browser, browsers ONLY allow strings.
+  If you would like the old behavior; use `setItemObject` instead of `setItem` which is an enhancement and allows all JavaScript types to be stored.   
 
 ## Installation 
 
@@ -58,13 +62,22 @@ This will return whatever you stored in that key, or null if that key doesn't ex
 let me = localStorage.getItem('MeaningOfLife') || 42;
 ```
 
-#### localStorage.setItem(name, value) - Set a value into storage
+#### localStorage.setItem(name, value) - Set a STRING value into storage
 ##### name - the key to set
-##### value - the value to set; this can be number, string, object, array.  (Must be a native JavaScript object)
+##### value - the value to set; this can be number or string.  Will auto-convert to string.
 
 ```js
 localStorage.setItem('Zork', 'You are about to be eaten by a Grue!');
 ```
+
+#### localStorage.setItemObject(name, value) - Sets a value into storage
+##### name - the key to set
+##### value - the value to set; this can be number, string, object, array.  (Must be a native JavaScript object)
+
+```js
+localStorage.setItem('Zork', {result: 'You are about to be eaten by a Grue!'});
+```
+
 
 
 #### localStorage.removeItem(name) - Delete and item from storage
