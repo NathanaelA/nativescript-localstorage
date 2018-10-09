@@ -19,6 +19,6 @@
     "babel-types": "6.4.5",
     "babylon": "6.4.5",
     "lazy": "1.0.11",
-    "nativescript-dev-webpack": "^0.17.0-2018-09-11-02"
+    "nativescript-dev-webpack": "^0.17.0-2018-09-12-02"
   }
 }
