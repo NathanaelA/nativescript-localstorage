@@ -160,4 +160,10 @@ if (!global.sessionStorage) {
 
 
 module.exports = global.localStorage;
-module.hot && module.hot.accept();
+
+if (module.hot) {
+    module.hot.accept();
+    module.hot.dispose(() => {
+        global.localStorage = undefined;
+    })
+}
