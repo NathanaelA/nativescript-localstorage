@@ -14,7 +14,7 @@ if (!global.Storage) {
     global.Storage = function Storage() { };
 }
 
-if (!global.localStorage) {
+if (!global.localStorage || module.hot) {
     let localStorageData = {};
     let localStorageTimeout = null;
 
