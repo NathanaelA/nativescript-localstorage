@@ -64,7 +64,7 @@ let me = localStorage.getItem('MeaningOfLife') || 42;
 
 #### localStorage.setItem(name, value) - Set a STRING value into storage
 ##### name - the key to set
-##### value - the value to set; this can be number or string.  Will auto-convert to string.
+##### value - the value to set; this can be number or string.  **Will auto-convert to string.**
 
 ```js
 localStorage.setItem('Zork', 'You are about to be eaten by a Grue!');
@@ -75,7 +75,8 @@ localStorage.setItem('Zork', 'You are about to be eaten by a Grue!');
 ##### value - the value to set; this can be number, string, object, array.  (Must be a native JavaScript object)
 
 ```js
-localStorage.setItem('Zork', {result: 'You are about to be eaten by a Grue!'});
+localStorage.setItemObject('Zork', {result: 'You are about to be eaten by a Grue!'});
+const res = localStorage.getItem('Zork'); // Will be the Object
 ```
 
 

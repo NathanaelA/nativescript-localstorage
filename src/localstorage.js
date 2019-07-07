@@ -6,7 +6,8 @@
 **********************************************************************************/
 'use strict';
 
-const FileSystemAccess = require('tns-core-modules/file-system/file-system-access').FileSystemAccess;
+
+let FileSystemAccess = require('tns-core-modules/file-system/file-system-access').FileSystemAccess;
 
 // So that code that is looking for the "Storage" object will pass its check
 if (!global.Storage) {
@@ -160,4 +161,9 @@ if (!global.sessionStorage) {
 
 module.exports = global.localStorage;
 
-module.hot && module.hot.accept();
+if (module.hot) {
+    module.hot.accept();
+    module.hot.dispose(() => {
+        global.localStorage = undefined;
+    })
+}
