@@ -1,4 +1,4 @@
-<img src="unmaintained.svg" height="30px" width="100%">
+<a href="https://proplugins.org"><img src="unmaintained.svg" height="30px" width="100%"></a>
 
 # NativeScript-LocalStorage
 
