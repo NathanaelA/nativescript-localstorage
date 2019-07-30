@@ -1,6 +1,6 @@
 {
     "name": "nativescript-localstorage",
-    "version": "2.0.0",
+    "version": "2.0.1",
     "description": "LocalStorage/SessionStorage API",
     "main": "localstorage",
     "nativescript": {
@@ -17,7 +17,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/NathanaelA/nativescript-localstorage.git"
+        "url": "https://git.proplugins.org/proplugins/nativescript-localstorage.git"
     },
     "keywords": [
         "NativeScript",
@@ -45,20 +45,18 @@
       "url": "https://github.com/danielkucal"
     }
 	],
-    "license": {
-        "type": "MIT",
-        "url": "https://github.com/NathanaelA/nativescript-localstorage/blob/master/LICENSE"
-    },
+    "license": "Unsupported",
     "bugs": {
-        "url": "https://github.com/NathanaelA/nativescript-localstorage/issues"
+        "url": "https://git.proplugins.org/proplugins/nativescript-localstorage/issues"
     },
-    "homepage": "https://github.com/NathanaelA/nativescript-localstorage",
+    "homepage": "https://git.proplugins.org/proplugins/nativescript-localstorage",
     "readmeFilename": "README.md",
     "scripts": {
         "demo.ios": "npm run preparedemo && cd demo && tns emulate ios",
         "demo.android": "npm run preparedemo && cd demo && tns run android",
         "debug.ios": "npm run preparedemo && cd demo && tns debug ios --emulator",
         "debug.android": "npm run preparedemo && cd demo && tns debug android --emulator",
+        "postinstall": "node postinstall.js || echo \"ignore\"",
         "preparedemo": "cd demo && tns plugin remove nativescript-localstorage && tns plugin add .. && tns install",
         "setup": "cd demo && npm install && tns plugin add .. && cd ..",
         "start": "npm run demo.android"

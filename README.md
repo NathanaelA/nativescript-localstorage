@@ -1,10 +1,6 @@
 # NativeScript-LocalStorage
 
+This plugin is no longer being maintained in this repo!   It has moved to a new home.
 
-## Developed by
-[![MasterTech](https://plugins.nativescript.rocks/i/mtns.png)](https://plugins.nativescript.rocks/mastertech-nstudio)
+<p align="center"><a href="https://proplugins.org"><img src="https://proplugins.org/logos/logo.png" width="400"  /></a></p>
 
-
-
-## Documentation
-The [documentation](src/README.md) for the plugin is located in the [src folder](src).

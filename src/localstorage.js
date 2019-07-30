@@ -1,5 +1,5 @@
 /**********************************************************************************
-* (c) 2017-2018, Nathanael Anderson.
+* (c) 2017-2019, Nathanael Anderson.
 * Licensed under the MIT license.
 *
 * Version 1.1.8                                        nathan@master-technology.com
