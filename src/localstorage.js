@@ -7,7 +7,7 @@
 'use strict';
 
 
-let FileSystemAccess = require('tns-core-modules/file-system/file-system-access').FileSystemAccess;
+import {FileSystemAccess} from "@nativescript/core/file-system/file-system-access";
 
 // So that code that is looking for the "Storage" object will pass its check
 if (!global.Storage) {
@@ -156,10 +156,6 @@ if (!global.sessionStorage) {
     });
 }
 
-
-
-
-module.exports = global.localStorage;
 
 if (module.hot) {
     module.hot.accept();
