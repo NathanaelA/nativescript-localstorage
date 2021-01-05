@@ -157,6 +157,9 @@ if (!global.sessionStorage) {
 }
 
 
+export default global.localStorage;
+
+
 if (module.hot) {
     module.hot.accept();
     module.hot.dispose(() => {
